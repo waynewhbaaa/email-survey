@@ -28,12 +28,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
 // Router
 require('./routes/authRoutes')(app);
-
-app.get('/', function(req, res){
-  res.send({hi: 'there'});
-});
 
 // Listening for port dynamically (Mostly on heroku)
 const PORT = process.env.PORT || 5000;
